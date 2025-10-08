@@ -1,0 +1,64 @@
+   /* --- CUSTOM COLORS AND FONTS (Diambil dari file sebelumnya) --- */
+        :root {
+            --coffee-dark: #3e2723; /* Brown 900 */
+            --coffee-accent: #ffb300; /* Amber 600 */
+            --coffee-light: #d7ccc8; /* Brown 200 */
+            --coffee-bg: #f5f5f5; /* Light Gray */
+        }
+        
+        .bg-coffee-dark { background-color: var(--coffee-dark); }
+        .text-coffee-dark { color: var(--coffee-dark); }
+        .text-coffee-accent { color: var(--coffee-accent); }
+        .text-coffee-light { color: var(--coffee-light); }
+        .bg-coffee-bg { background-color: var(--coffee-bg); }
+
+        /* --- HERO SECTION BACKGROUND --- */
+        .hero-section {
+            /* URL placeholder untuk simulasi latar belakang biji kopi */
+            background: url('https://placehold.co/1200x700/3e2723/ffb300?text=Warkop51+Coffee') no-repeat center center;
+            background-size: cover;
+            position: relative;
+        }
+        /* Overlay gelap untuk teks yang lebih jelas */
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+        .hero-content {
+            z-index: 2;
+            position: relative;
+        }
+
+        /* --- CSS-ONLY MOBILE MENU LOGIC --- */
+        /* Sembunyikan menu secara default */
+        #mobile-menu-static {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        /* Sembunyikan ikon close secara default */
+        #close-icon {
+            display: none;
+        }
+
+        /* Tampilkan menu dan ubah ikon jika checkbox dicentang */
+        #menu-control:checked ~ #mobile-menu-static {
+            max-height: 500px; /* Nilai besar yang cukup untuk menampilkan menu */
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+        /* Ubah ikon saat dicentang */
+        #menu-control:checked + label #open-icon {
+            display: none;
+        }
+        #menu-control:checked + label #close-icon {
+            display: block;
+        }

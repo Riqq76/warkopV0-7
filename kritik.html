@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warkop51 - Saran & Kritik (Static)</title>
+    <!-- Memuat Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="asset/kritik.css">
+    
+</head>
+<body class="bg-coffee-bg font-sans min-h-screen">
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="fixed top-0 left-0 w-full bg-coffee-dark shadow-xl z-50 rounded-b-lg">
+        
+        <!-- Input (Checkbox) for CSS Hack -->
+        <input type="checkbox" id="menu-control" class="hidden"> 
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-extrabold text-coffee-accent">Warkop51 ☕</span>
+                    <span class="ml-6 text-coffee-light text-sm hidden sm:inline rounded-full px-3 py-1 bg-coffee-dark/50">
+                        Keranjang Anda: <span class="font-bold text-white">3</span> item
+                    </span>
+                </div>
+
+                <!-- Menu Desktop -->
+                <div class="hidden sm:flex space-x-4 items-center">
+                    <a href="index.html" class="text-white hover:text-coffee-accent transition font-medium">Beranda</a>
+                    <a href="tentang.html" class="text-white hover:text-coffee-accent transition font-medium">Tentang Kami</a>
+                    <a href="menu.html" class="text-white hover:text-coffee-accent transition font-medium">Menu Kami</a>
+                    <a href="kritik.html" class="text-coffee-accent border-b-2 border-coffee-accent font-medium">Saran & Kritik</a>
+                    <a href="kontak.html" class="text-white hover:text-coffee-accent transition font-medium">Kontak</a>
+                    <a href="checkout.html" class="text-white bg-green-500 hover:bg-green-600 transition font-medium rounded-full px-3 py-1 ml-4 shadow-md">Keranjang</a>
+                    <a href="login.html" class="bg-red-500 hover:bg-red-600 text-white text-sm py-2 px-4 rounded-full ml-4 shadow-md transition">Keluar</a>
+                </div>
+
+                <!-- Tombol Hamburger -->
+                <div class="flex sm:hidden">
+                    <label for="menu-control" class="inline-flex items-center justify-center p-2 rounded-md text-coffee-light hover:text-white hover:bg-coffee-dark/70 cursor-pointer">
+                        <!-- Ikon Buka -->
+                        <svg id="open-icon" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                        <!-- Ikon Tutup -->
+                        <svg id="close-icon" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div class="sm:hidden bg-coffee-dark/95" id="mobile-menu-static">
+            <div class="px-2 pt-2 pb-3 space-y-1 flex flex-col items-start">
+                <a href="index.html" class="text-white hover:bg-coffee-dark/50 w-full px-3 py-2 rounded-md text-base transition">Beranda</a>
+                <a href="tentang.html" class="text-white hover:bg-coffee-dark/50 w-full px-3 py-2 rounded-md text-base transition">Tentang Kami</a>
+                <a href="menu.html" class="text-white hover:bg-coffee-dark/50 w-full px-3 py-2 rounded-md text-base transition">Menu Kami</a>
+                <a href="kritik.html" class="text-coffee-accent bg-coffee-dark/50 w-full px-3 py-2 rounded-md text-base">Saran & Kritik</a>
+                <a href="kontak.html" class="text-white hover:bg-coffee-dark/50 w-full px-3 py-2 rounded-md text-base transition">Kontak</a>
+                <a href="checkout.html" class="text-white bg-green-500 hover:bg-green-600 w-full px-3 py-2 rounded-md text-base mt-2 text-center transition">Keranjang (Lihat)</a>
+                <a href="login.html" class="bg-red-500 hover:bg-red-600 text-white w-full py-2 px-4 rounded-md shadow-md mt-2 text-center transition">Keluar</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== KONTEN ===== -->
+    <main class="pt-24 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white p-8 md:p-12 rounded-xl shadow-2xl max-w-2xl mx-auto border-t-8 border-coffee-accent">
+                <h2 class="text-4xl font-extrabold text-coffee-dark mb-6 text-center">Saran & Kritik 📝</h2>
+                <p class="text-gray-600 mb-8 text-center text-lg">
+                    Kami sangat menghargai masukan Anda. Setiap kritik membangun dan saran positif akan membantu Warkop51 menjadi lebih baik.
+                </p>
+
+                <!-- Form (Akan berfungsi sebagai form statis, tidak mengirim data tanpa JS/Backend) -->
+                <form action="#" method="POST" class="space-y-6">
+                    <div>
+                        <label for="complaint-text" class="block text-gray-700 font-semibold mb-2">Pesan Anda</label>
+                        <textarea id="complaint-text" name="complaint-text" rows="5" required
+                            class="w-full p-4 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-4 focus:ring-coffee-accent focus:border-coffee-accent/50 transition duration-200 resize-none shadow-sm"
+                            placeholder="Tulis saran atau kritik Anda di sini..."></textarea>
+                    </div>
+
+                    <div>
+                        <label for="complaint-name" class="block text-gray-700 font-semibold mb-2">Nama (Opsional)</label>
+                        <input type="text" id="complaint-name" name="complaint-name"
+                            class="w-full p-4 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-4 focus:ring-coffee-accent focus:border-coffee-accent/50 transition duration-200 shadow-sm"
+                            placeholder="Masukkan nama Anda atau biarkan kosong">
+                    </div>
+
+                    <button type="submit"
+                        class="bg-coffee-accent hover:bg-orange-600 text-coffee-dark font-bold py-3 rounded-xl w-full shadow-xl transition transform hover:scale-[1.01] duration-300">
+                        Kirim Masukan
+                    </button>
+
+                    <!-- Pesan sukses statis (tersembunyi karena tidak ada JS untuk menampilkannya) -->
+                    <p class="success-message text-green-700 text-center mt-4 font-semibold text-lg p-3 bg-green-100 rounded-xl border border-green-300">
+                        Terima kasih! Masukan Anda telah kami terima (Simulasi).
+                    </p>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-coffee-dark text-coffee-light text-center p-6 mt-12 shadow-inner">
+        <p>© 2025 Warkop51. Dibuat dengan cinta dan secangkir kopi hangat.</p>
+    </footer>
+</body>
+</html>

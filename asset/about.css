@@ -1,0 +1,19 @@
+  .about-hero {
+      background-image: url('https://placehold.co/1200x400/a38b7e/4b3832?text=Our+Story');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .about-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(75, 56, 50, 0.7);
+      z-index: 10;
+    }
+
+    .hero-content {
+      z-index: 20;
+      position: relative;
+    }

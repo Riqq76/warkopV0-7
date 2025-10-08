@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Warkop51 - Beranda (Static)</title>
+    <!-- Memuat Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Memuat font Inter dan Roboto Mono -->
+    <link href="https://fonts.fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="asset/style.css">
+</head>
+
+<body class="bg-coffee-bg font-sans min-h-screen">
+    <div id="main-app">
+        <!-- ===== Navbar ===== -->
+        <nav class="fixed top-0 left-0 w-full bg-coffee-dark shadow-xl z-50 rounded-b-lg">
+            
+            <!-- Input (Checkbox) for CSS Hack. Class hidden wajib ada. -->
+            <input type="checkbox" id="menu-control" class="hidden">
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <!-- Logo -->
+                    <div class="flex items-center">
+                        <span class="text-2xl font-extrabold text-coffee-accent">Warkop51 ☕</span>
+                        <span class="ml-6 text-coffee-light text-sm hidden sm:inline rounded-full px-3 py-1 bg-coffee-dark/50">
+                            Keranjang Anda: <span class="font-bold text-white">5</span> item
+                        </span>
+                    </div>
+
+                    <!-- Menu Desktop -->
+                    <div class="hidden sm:flex space-x-4 items-center">
+                        <a href="index.html" class="text-coffee-accent border-b-2 border-coffee-accent font-medium transition duration-150">Beranda</a>
+                        <a href="tentang.html" class="text-white hover:text-coffee-accent font-medium transition duration-150">Tentang Kami</a>
+                        <a href="menu.html" class="text-white hover:text-coffee-accent font-medium transition duration-150">Menu Kami</a>
+                        <a href="kritik.html" class="text-white hover:text-coffee-accent font-medium transition duration-150">Saran & Kritik</a>
+                        <a href="kontak.html" class="text-white hover:text-coffee-accent font-medium transition duration-150">Kontak</a>
+                        <a href="keranjang.html" class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-full ml-4 shadow-md transition duration-150">Keranjang</a>
+                        <a href="login.html" class="bg-red-500 hover:bg-red-600 text-white text-sm py-2 px-4 rounded-full ml-4 shadow-md transition duration-150">
+                            Keluar
+                        </a>
+                    </div>
+
+                    <!-- Tombol Hamburger (Label terhubung ke input checkbox) -->
+                    <label for="menu-control" class="flex sm:hidden p-2 rounded-md text-coffee-light hover:text-white hover:bg-coffee-dark/70 focus:ring-2 focus:ring-coffee-accent cursor-pointer">
+                        <!-- Ikon Buka -->
+                        <svg id="open-icon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                        <!-- Ikon Tutup -->
+                        <svg id="close-icon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Menu Mobile (Harus menjadi sibling dari input checkbox untuk CSS-only) -->
+            <div class="sm:hidden bg-coffee-dark/95" id="mobile-menu-static">
+                <div class="px-2 pb-3 space-y-1 flex flex-col items-start">
+                    <a href="index.html" class="text-coffee-accent bg-coffee-dark/50 px-3 py-2 rounded-md font-medium w-full text-left transition duration-150">Beranda</a>
+                    <a href="tentang.html" class="text-white hover:bg-coffee-dark/50 px-3 py-2 rounded-md w-full text-left transition duration-150">Tentang Kami</a>
+                    <a href="menu.html" class="text-white hover:bg-coffee-dark/50 px-3 py-2 rounded-md w-full text-left transition duration-150">Menu Kami</a>
+                    <a href="kritik.html" class="text-white hover:bg-coffee-dark/50 px-3 py-2 rounded-md w-full text-left transition duration-150">Saran & Kritik</a>
+                    <a href="kontak.html" class="text-white hover:bg-coffee-dark/50 px-3 py-2 rounded-md w-full text-left transition duration-150">Kontak</a>
+                    <a href="keranjang.html" class="text-white bg-green-500 hover:bg-green-600 px-3 py-2 rounded-md w-full text-center mt-2 transition duration-150">Keranjang</a>
+                    <a href="login.html" class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-md w-full mt-2 text-center transition duration-150">Keluar</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ===== Konten Utama ===== -->
+        <main class="pt-16 pb-12">
+            <!-- Hero -->
+            <section class="hero-section min-h-[70vh] flex items-center justify-center text-center mb-12">
+                <div class="hero-content max-w-4xl mx-auto p-8 rounded-xl">
+                    <h1 class="text-4xl sm:text-6xl font-extrabold text-white mb-4 leading-tight">
+                        Selamat Datang di <span class="text-coffee-accent">Warkop51</span>
+                    </h1>
+                    <p class="text-xl sm:text-2xl text-coffee-light mb-8 font-light">
+                        Kopi terbaik, suasana paling nyaman.
+                    </p>
+                    <a href="menu.html" class="bg-coffee-accent hover:bg-yellow-600 text-coffee-dark font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:scale-105">
+                        Jelajahi Menu Kami →
+                    </a>
+                </div>
+            </section>
+
+            <!-- Tentang -->
+            <section class="py-12 text-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-coffee-dark mb-4">Lebih dari Sekedar Kopi</h2>
+                <p class="text-lg text-coffee-dark max-w-3xl mx-auto mb-10">
+                    Di Warkop51, kami percaya setiap cangkir kopi punya cerita. Kami menyajikan biji kopi lokal pilihan, dipanggang dan diseduh dengan keahlian.
+                </p>
+                <a href="tentang.html" class="text-coffee-accent hover:text-coffee-dark font-semibold border-b border-coffee-accent transition duration-150">
+                    Baca Kisah Kami Selengkapnya
+                </a>
+            </section>
+
+            <div class="border-t border-coffee-light/30 my-8 max-w-7xl mx-auto"></div>
+
+            <!-- Fitur Unggulan -->
+            <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-coffee-dark mb-10">Kenapa Memilih Warkop51?</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center border-t-4 border-coffee-accent transition hover:shadow-xl">
+                        <div class="text-4xl text-coffee-accent mb-3">🌱</div>
+                        <h3 class="text-xl font-bold text-coffee-dark mb-2">Biji Kopi Pilihan</h3>
+                        <p class="text-gray-600">Menggunakan biji kopi terbaik dari perkebunan lokal.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center border-t-4 border-coffee-accent transition hover:shadow-xl">
+                        <div class="text-4xl text-coffee-accent mb-3">👨‍🍳</div>
+                        <h3 class="text-xl font-bold text-coffee-dark mb-2">Barista Profesional</h3>
+                        <p class="text-gray-600">Disiapkan oleh barista berpengalaman dengan cinta.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center border-t-4 border-coffee-accent transition hover:shadow-xl">
+                        <div class="text-4xl text-coffee-accent mb-3">🛋️</div>
+                        <h3 class="text-xl font-bold text-coffee-dark mb-2">Suasana Nyaman</h3>
+                        <p class="text-gray-600">Tempat ideal untuk bersantai, bekerja, atau kumpul teman.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="border-t border-coffee-light/30 my-8 max-w-7xl mx-auto"></div>
+
+            <!-- Menu Unggulan -->
+            <section class="py-12 bg-coffee-dark/5 rounded-2xl p-6 md:p-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="w-full md:w-1/3">
+                        <img src="https://placehold.co/400x400/a38b7e/4b3832?text=Kopi+Gula+Aren"
+                            alt="Kopi Gula Aren Unggulan"
+                            class="w-full h-auto object-cover rounded-xl shadow-xl transition transform hover:scale-[1.01]"
+                            onerror="this.onerror=null;this.src='https://placehold.co/400x400/a38b7e/4b3832?text=Gagal+Load';">
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <h3 class="text-sm font-bold text-coffee-accent uppercase mb-2">Rekomendasi Kami</h3>
+                        <h2 class="text-4xl font-extrabold text-coffee-dark mb-4">Cicipi Kopi Gula Aren Terbaik</h2>
+                        <p class="text-coffee-dark mb-6 text-lg">
+                            Kombinasi espresso premium dan manis alami gula aren lokal — rasa creamy yang bikin hari cerah!
+                        </p>
+                        <a href="menu.html" class="bg-coffee-dark hover:bg-coffee-dark/80 text-white font-medium py-2 px-6 rounded-full shadow-lg transition duration-150 transform hover:-translate-y-0.5">
+                            Pesan Sekarang
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-coffee-dark text-coffee-light text-center p-6 mt-12 shadow-inner">
+            <p>© 2025 Warkop51. Dibuat dengan cinta dan secangkir kopi hangat.</p>
+        </footer>
+    </div>
+</body>
+</html>

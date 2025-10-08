@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warkop51 - Keranjang Belanja</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="asset/keranjang.css">
+
+</head>
+
+<body class="bg-coffee-bg min-h-screen font-sans">
+    <div id="main-app">
+        
+        <!-- ===== Navbar ===== -->
+        <nav class="fixed top-0 left-0 w-full bg-coffee-dark shadow-xl z-50 rounded-b-lg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+
+                    <!-- Logo dan Status -->
+                    <div class="flex items-center">
+                        <span class="text-2xl font-extrabold text-coffee-accent">Warkop51 ☕</span>
+                        <span class="ml-6 text-coffee-light text-sm hidden sm:inline rounded-full px-3 py-1 bg-coffee-dark/50">
+                            Keranjang: <span class="font-bold text-white">3</span> item
+                        </span>
+                    </div>
+
+                    <!-- Menu Desktop -->
+                    <div id="desktop-menu" class="hidden sm:flex space-x-4 items-center">
+                        <a href="index.html" class="text-white hover:text-coffee-accent font-medium transition duration-150">Beranda</a>
+                        <a href="menu.html" class="text-white hover:text-coffee-accent font-medium transition duration-150">Menu Kami</a>
+                        <a href="keranjang.html" class="text-coffee-accent font-bold border-b-2 border-coffee-accent pb-1">Keranjang</a>
+                        <a href="kontak.html" class="text-white hover:text-coffee-accent font-medium transition duration-150">Kontak</a>
+                    </div>
+
+                    <!-- Tombol Hamburger Mobile -->
+                    <div class="flex sm:hidden">
+                        <input type="checkbox" id="menu-toggle-checkbox">
+                        <label for="menu-toggle-checkbox" class="p-2 rounded-md text-coffee-light hover:text-white hover:bg-coffee-dark/70 transition duration-150 cursor-pointer" aria-label="Toggle main menu">
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path id="open-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                                <path id="close-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu Mobile -->
+            <div class="sm:hidden bg-coffee-dark/95" id="mobile-menu">
+                <div class="px-2 pb-3 space-y-1 flex flex-col items-start">
+                    <a href="index.html" class="w-full text-left text-white hover:bg-coffee-dark/50 block px-3 py-2 rounded-md font-medium transition duration-150">Beranda</a>
+                    <a href="menu.html" class="w-full text-left text-white hover:bg-coffee-dark/50 block px-3 py-2 rounded-md font-medium transition duration-150">Menu Kami</a>
+                    <a href="keranjang.html" class="w-full text-left text-coffee-accent bg-coffee-dark/50 block px-3 py-2 rounded-md font-bold transition duration-150">Keranjang</a>
+                    <a href="kontak.html" class="w-full text-left text-white hover:bg-coffee-dark/50 block px-3 py-2 rounded-md font-medium transition duration-150">Kontak</a>
+                    <a href="struk-pembayaran.html" class="w-full text-center text-white bg-green-500 hover:bg-green-600 block px-3 py-2 rounded-md font-medium mt-2 shadow-md transition duration-150">Lanjut ke Pembayaran</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ===== Konten Utama Keranjang ===== -->
+        <main class="pt-24 pb-12">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-4xl font-extrabold text-coffee-dark mb-8 text-center sm:text-left">Keranjang Belanja Anda</h1>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Kolom Keranjang (2/3 lebar di desktop) -->
+                    <div class="lg:col-span-2 space-y-6">
+                        
+                        <!-- Item 1: Kopi Susu Aren -->
+                        <div class="bg-white p-4 rounded-xl shadow-lg flex items-center space-x-4">
+                            <img src="https://placehold.co/80x80/ffb300/3e2723?text=Kopi" alt="Kopi Susu Aren" class="w-20 h-20 rounded-lg object-cover">
+                            <div class="flex-grow">
+                                <p class="font-bold text-lg text-coffee-dark">Kopi Susu Aren</p>
+                                <p class="text-gray-500 text-sm">Ukuran: Regular, Gula: Normal</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="flex items-center space-x-2 mb-1">
+                                    <!-- Kontrol kuantitas statis -->
+                                    <span class="text-lg font-bold text-coffee-dark bg-coffee-bg px-2 rounded">2x</span>
+                                </div>
+                                <p class="font-semibold text-md text-coffee-accent">Rp 40.000</p>
+                                <!-- Tombol Hapus Statis -->
+                                <span class="text-xs text-red-500 hover:text-red-700 cursor-not-allowed block mt-1">Hapus (Static)</span>
+                            </div>
+                        </div>
+
+                        <!-- Item 2: Roti Bakar Keju -->
+                        <div class="bg-white p-4 rounded-xl shadow-lg flex items-center space-x-4">
+                            <img src="https://placehold.co/80x80/d7ccc8/3e2723?text=Roti" alt="Roti Bakar Keju" class="w-20 h-20 rounded-lg object-cover">
+                            <div class="flex-grow">
+                                <p class="font-bold text-lg text-coffee-dark">Roti Bakar Keju</p>
+                                <p class="text-gray-500 text-sm">Topping: Keju Cheddar</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="flex items-center space-x-2 mb-1">
+                                    <span class="text-lg font-bold text-coffee-dark bg-coffee-bg px-2 rounded">1x</span>
+                                </div>
+                                <p class="font-semibold text-md text-coffee-accent">Rp 25.000</p>
+                                <span class="text-xs text-red-500 hover:text-red-700 cursor-not-allowed block mt-1">Hapus (Static)</span>
+                            </div>
+                        </div>
+
+                        <!-- Item 3: Es Teh Manis -->
+                        <div class="bg-white p-4 rounded-xl shadow-lg flex items-center space-x-4">
+                            <img src="https://placehold.co/80x80/22c55e/ffffff?text=Teh" alt="Es Teh Manis" class="w-20 h-20 rounded-lg object-cover">
+                            <div class="flex-grow">
+                                <p class="font-bold text-lg text-coffee-dark">Es Teh Manis</p>
+                                <p class="text-gray-500 text-sm">Porsi: Besar</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="flex items-center space-x-2 mb-1">
+                                    <span class="text-lg font-bold text-coffee-dark bg-coffee-bg px-2 rounded">3x</span>
+                                </div>
+                                <p class="font-semibold text-md text-coffee-accent">Rp 15.000</p>
+                                <span class="text-xs text-red-500 hover:text-red-700 cursor-not-allowed block mt-1">Hapus (Static)</span>
+                            </div>
+                        </div>
+
+                        <!-- Tambah Item Baru (Simulasi) -->
+                        <div class="text-center p-4 border-2 border-coffee-light rounded-xl border-dashed">
+                            <a href="menu.html" class="font-medium text-coffee-dark hover:text-coffee-accent transition">
+                                ← Tambah item lain dari Menu Kami
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Kolom Ringkasan (1/3 lebar di desktop) -->
+                    <div class="lg:col-span-1">
+                        <div class="bg-coffee-dark p-6 rounded-xl shadow-2xl text-white sticky top-20">
+                            <h2 class="text-2xl font-bold text-coffee-accent mb-4">Ringkasan Pesanan</h2>
+                            
+                            <!-- Detail Biaya -->
+                            <div class="space-y-3 mb-6 border-b border-coffee-light/30 pb-4">
+                                <div class="flex justify-between">
+                                    <span>Subtotal (6 Item):</span>
+                                    <span class="font-semibold">Rp 80.000</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Biaya Layanan:</span>
+                                    <span class="font-semibold">Rp 0</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Pajak (10%):</span>
+                                    <span class="font-semibold">Rp 8.000</span>
+                                </div>
+                            </div>
+
+                            <!-- Total Akhir -->
+                            <div class="flex justify-between text-xl font-extrabold mb-6">
+                                <span>TOTAL AKHIR:</span>
+                                <span class="text-coffee-accent">Rp 88.000</span>
+                            </div>
+
+                            <!-- Tombol Checkout (Menautkan ke struk-pembayaran.html) -->
+                            <a href="struk-pembayaran.html" 
+                               class="block w-full text-center bg-green-500 hover:bg-green-600 text-white text-lg font-bold py-3 rounded-lg shadow-xl transition duration-300 transform hover:scale-[1.02]">
+                                Lanjut ke Pembayaran
+                            </a>
+
+                            <p class="text-xs text-coffee-light/70 mt-3 text-center">Anda akan diarahkan ke halaman konfirmasi pembayaran tunai.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- ===== Footer ===== -->
+        <footer class="bg-coffee-dark text-coffee-light text-center p-6 mt-12 shadow-inner">
+            <p>© 2025 Warkop51. Kopi hangat, hati senang.</p>
+        </footer>
+    </div>
+</body>
+</html>

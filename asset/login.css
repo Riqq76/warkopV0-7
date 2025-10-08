@@ -1,0 +1,32 @@
+ /* --- CUSTOM COLORS AND FONT SETUP --- */
+        :root {
+            --coffee-dark: #3e2723; /* Brown 900 */
+            --coffee-accent: #ffb300; /* Amber 600 */
+            --coffee-light: #d7ccc8; /* Brown 200 */
+            --coffee-bg: #f5f5f5; /* Light Gray */
+        }
+        
+        .bg-coffee-dark { background-color: var(--coffee-dark); }
+        .text-coffee-dark { color: var(--coffee-dark); }
+        .text-coffee-accent { color: var(--coffee-accent); }
+        .text-coffee-light { color: var(--coffee-light); }
+        .bg-coffee-bg { background-color: var(--coffee-bg); }
+        .border-coffee-accent { border-color: var(--coffee-accent); }
+        
+        /* Apply custom colors to existing Tailwind utility classes */
+        .bg-coffee-accent { background-color: var(--coffee-accent); }
+        .hover\:bg-coffee-accent\/90:hover { background-color: rgba(255, 179, 0, 0.9); }
+        
+        /* Styling the inputs for focus consistency (using custom focus ring) */
+        input:focus, textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(255, 179, 0, 0.4); /* Custom ring style for focus */
+            border-color: var(--coffee-accent);
+        }
+
+        /* Ensure smooth transition for min-h-screen layout */
+        #main-app {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }

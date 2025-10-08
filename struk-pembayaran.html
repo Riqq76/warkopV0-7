@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warkop51 - Struk Pembayaran (Static)</title>
+    <!-- Memuat Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="asset/struk-pembayaran.css">
+    
+</head>
+
+<body class="bg-coffee-bg min-h-screen font-sans">
+    <div id="main-app">
+        <!-- ===== Navbar (Akan disembunyikan saat mencetak) ===== -->
+        <nav class="fixed-navbar fixed top-0 left-0 w-full bg-coffee-dark shadow-xl z-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center">
+                        <span class="text-2xl font-extrabold text-coffee-accent">Warkop51 ☕</span>
+                        <span class="ml-6 text-coffee-light text-sm hidden sm:inline">Checkout Selesai (Static)</span>
+                    </div>
+                    <div class="hidden sm:flex space-x-4 items-center">
+                        <a href="index.html" class="text-white hover:text-coffee-accent transition font-medium rounded-lg px-2 py-1">Beranda</a>
+                        <a href="menu.html" class="text-white hover:text-coffee-accent transition font-medium rounded-lg px-2 py-1">Menu Kami</a>
+                        <span class="text-coffee-accent font-medium bg-green-500 rounded-full px-3 py-1 ml-4 border-b-2 border-coffee-accent">Pesanan Selesai</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ===== Konten Utama ===== -->
+        <main class="pt-24 pb-12 flex justify-center items-center">
+            <div class="max-w-sm mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <h2 class="text-3xl font-bold text-coffee-dark mb-6 text-center no-print">Pesanan Berhasil! 🎉</h2>
+
+                <!-- Struk Static -->
+                <div class="receipt-paper bg-white p-6 sm:p-8 rounded-xl border-4 border-coffee-accent shadow-2xl font-mono-receipt w-full">
+                    <h1 class="text-3xl font-bold text-center text-coffee-dark mb-2">Warkop51</h1>
+                    <p class="text-center text-xs mb-6 text-gray-600 border-b pb-4 border-dashed">Jl. Kopi Pahit No. 51, Jakarta Selatan</p>
+
+                    <div class="py-3 mb-4 space-y-1 text-sm">
+                        <div class="flex justify-between">
+                            <span class="font-semibold">No. Pesanan:</span>
+                            <span class="font-bold text-coffee-accent">WK51-241007-9876</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Nama Pemesan:</span>
+                            <span class="font-medium">Andi Kopi</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Tanggal/Waktu:</span>
+                            <span class="font-medium">07/10/2024 @ 18:15</span>
+                        </div>
+                    </div>
+
+                    <h3 class="font-bold text-lg text-coffee-dark border-t border-b border-gray-400 py-2 mb-2">Detail Item:</h3>
+                    <div class="space-y-2 mb-4">
+                        <div class="flex justify-between text-sm">
+                            <span>2x Kopi Susu Aren</span>
+                            <span>Rp 40.000</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span>1x Roti Bakar Keju</span>
+                            <span>Rp 25.000</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span>3x Es Teh Manis</span>
+                            <span>Rp 15.000</span>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-b-2 border-coffee-dark py-3 mb-4 space-y-1 text-base">
+                        <div class="flex justify-between font-semibold">
+                            <span>Subtotal:</span>
+                            <span>Rp 80.000</span>
+                        </div>
+                        <div class="flex justify-between text-lg font-bold text-green-600 pt-2">
+                            <span>TOTAL BAYAR:</span>
+                            <span>Rp 80.000</span>
+                        </div>
+                    </div>
+
+                    <div class="text-center text-sm space-y-1">
+                        <p class="font-medium">Metode Pembayaran: <span class="text-coffee-accent font-bold">Cash (Tunai di Tempat)</span></p>
+                        <p class="text-gray-500 mt-2">Silakan tunjukkan struk ini di kasir untuk pengambilan pesanan Anda.</p>
+                        <p class="text-xs italic mt-4 border-t pt-2">Kopi hangat, hati senang. Sampai jumpa lagi!</p>
+                    </div>
+                </div>
+
+                <!-- Tombol (Dibuat statis dan diubah menjadi pesan, karena fungsi salin/cetak memerlukan JS) -->
+                <div class="no-print mt-6 text-center space-y-4">
+                    <span class="inline-block bg-coffee-dark text-white font-bold py-2 px-4 rounded-lg shadow-md opacity-70 cursor-not-allowed">
+                        Salin No. Pesanan (Memerlukan JS)
+                    </span>
+                    <!-- Hapus onclick="window.print()" dan ganti dengan instruksi -->
+                    <span class="inline-block bg-coffee-accent text-white font-bold py-2 px-4 rounded-lg shadow-md ml-2 transition duration-200">
+                        Cetak Struk (Gunakan Ctrl+P/Cmd+P)
+                    </span>
+                </div>
+
+                <div class="mt-8 text-center no-print">
+                    <a href="menu.html" class="text-sm text-coffee-light hover:text-coffee-dark transition border-t pt-4">
+                        ← Kembali ke Menu
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <!-- ===== Footer ===== -->
+        <footer class="bg-coffee-dark text-coffee-light text-center p-6 mt-12 shadow-inner no-print">
+            <p>© 2025 Warkop51. Dibuat dengan cinta dan secangkir kopi hangat.</p>
+        </footer>
+    </div>
+</body>
+</html>

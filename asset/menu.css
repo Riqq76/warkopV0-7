@@ -1,0 +1,48 @@
+  /* --- CUSTOM COLORS AND FONT SETUP --- */
+        :root {
+            --coffee-dark: #3e2723; /* Brown 900 */
+            --coffee-accent: #ffb300; /* Amber 600 */
+            --coffee-light: #d7ccc8; /* Brown 200 */
+            --coffee-bg: #f5f5f5; /* Light Gray */
+        }
+        
+        .bg-coffee-dark { background-color: var(--coffee-dark); }
+        .text-coffee-dark { color: var(--coffee-dark); }
+        .text-coffee-accent { color: var(--coffee-accent); }
+        .text-coffee-light { color: var(--coffee-light); }
+        .bg-coffee-bg { background-color: var(--coffee-bg); }
+        .border-coffee-accent { border-color: var(--coffee-accent); }
+        
+        /* Apply custom colors to existing Tailwind utility classes */
+        .bg-coffee-accent { background-color: var(--coffee-accent); }
+        .text-coffee-dark { color: var(--coffee-dark); }
+
+        /* --- CSS-ONLY MOBILE MENU LOGIC --- */
+        /* Sembunyikan menu secara default */
+        #mobile-menu-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        /* Tampilkan menu jika checkbox dicentang */
+        #menu-toggle:checked ~ #mobile-menu-content {
+            max-height: 500px; 
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Ikon Tutup default hidden */
+        .menu-icon-closed { display: block; }
+        .menu-icon-open { display: none; }
+
+        /* Ubah ikon saat dicentang */
+        #menu-toggle:checked ~ div > div > .flex.sm\:hidden label .menu-icon-closed { display: none; }
+        #menu-toggle:checked ~ div > div > .flex.sm\:hidden label .menu-icon-open { display: block; }
+        
+        /* Ensure content starts below fixed navbar */
+        body {
+            padding-top: 4rem; /* h-16 = 4rem */
+        }

@@ -1,0 +1,48 @@
+ /* --- CUSTOM COLORS --- */
+        :root {
+            --coffee-dark: #3e2723; /* Brown 900 */
+            --coffee-accent: #ffb300; /* Amber 600 */
+            --coffee-light: #d7ccc8; /* Brown 200 */
+            --coffee-bg: #f5f5f5; /* Light Gray */
+            --danger: #ef4444; /* Red 500 */
+        }
+        
+        .bg-coffee-dark { background-color: var(--coffee-dark); }
+        .text-coffee-dark { color: var(--coffee-dark); }
+        .text-coffee-accent { color: var(--coffee-accent); }
+        .text-coffee-light { color: var(--coffee-light); }
+        .bg-coffee-bg { background-color: var(--coffee-bg); }
+
+        /* --- CSS-ONLY MOBILE MENU LOGIC --- */
+        /* Sembunyikan Checkbox yang akan mengontrol menu */
+        #menu-toggle-checkbox {
+            display: none;
+        }
+
+        /* Sembunyikan menu seluler secara default */
+        #mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+        }
+
+        /* Tampilkan menu seluler jika checkbox dicentang */
+        #menu-toggle-checkbox:checked ~ #mobile-menu {
+            max-height: 500px;
+            padding-top: 0.75rem; 
+            padding-bottom: 0.75rem;
+        }
+
+        /* Ikon hamburger/close */
+        #open-icon, #close-icon {
+            display: block;
+        }
+        #menu-toggle-checkbox:checked + label #open-icon {
+            display: none;
+        }
+        #menu-toggle-checkbox:checked + label #close-icon {
+            display: block;
+        }
+        #close-icon {
+            display: none;
+        }

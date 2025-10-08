@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warkop51 - Menu Kami</title>
+    <!-- Memuat Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="asset/menu.css">
+
+   
+</head>
+
+<body class="bg-coffee-bg font-sans">
+    <!-- ===== NAVBAR ===== -->
+    <nav class="fixed top-0 left-0 w-full bg-coffee-dark shadow-xl z-50 rounded-b-lg">
+        
+        <!-- Input (Checkbox) for CSS Hack -->
+        <input type="checkbox" id="menu-toggle" class="hidden">
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-4">
+                    <span class="text-2xl font-extrabold text-coffee-accent">Warkop51 ☕</span>
+                    <span class="hidden sm:inline text-sm text-coffee-light rounded-full px-3 py-1 bg-coffee-dark/50">
+                        Keranjang Anda: 
+                        <span class="text-white font-bold">0</span> item
+                    </span>
+                </div>
+
+                <!-- Menu Desktop -->
+                <div class="hidden sm:flex items-center space-x-4">
+                    <a href="index.html" class="text-white hover:text-coffee-accent font-medium transition">Beranda</a>
+                    <a href="tentang.html" class="text-white hover:text-coffee-accent font-medium transition">Tentang Kami</a>
+                    <a href="menu.html"
+                        class="text-coffee-accent font-semibold border-b-2 border-coffee-accent">Menu Kami</a>
+                    <a href="kritik.html" class="text-white hover:text-coffee-accent font-medium transition">Saran & Kritik</a>
+                    <a href="kontak.html" class="text-white hover:text-coffee-accent font-medium transition">Kontak</a>
+                    <a href="checkout.html"
+                        class="bg-green-500 hover:bg-green-600 text-white rounded-full px-3 py-1 font-medium transition shadow-md">Keranjang</a>
+                    <a href="login.html"
+                        class="bg-red-500 hover:bg-red-600 text-white rounded-full px-3 py-1 font-medium shadow-md transition">Keluar</a>
+                </div>
+
+                <!-- Tombol Hamburger (Mobile) -->
+                <div class="flex sm:hidden">
+                    <label for="menu-toggle" class="p-2 text-coffee-light hover:text-white cursor-pointer">
+                        <!-- Ikon Buka -->
+                        <svg class="h-6 w-6 menu-icon-closed" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                         <!-- Ikon Tutup -->
+                        <svg class="h-6 w-6 menu-icon-open" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile Content -->
+        <div id="mobile-menu-content" class="bg-coffee-dark/95 sm:hidden px-4 space-y-2">
+            <a href="index.html" class="text-white block hover:bg-coffee-dark/50 p-2 rounded-md transition">Beranda</a>
+            <a href="tentang.html" class="text-white block hover:bg-coffee-dark/50 p-2 rounded-md transition">Tentang Kami</a>
+            <a href="menu.html" class="text-coffee-accent block bg-coffee-dark/50 p-2 rounded-md">Menu Kami</a>
+            <a href="kritik.html" class="text-white block hover:bg-coffee-dark/50 p-2 rounded-md transition">Saran & Kritik</a>
+            <a href="kontak.html" class="text-white block hover:bg-coffee-dark/50 p-2 rounded-md transition">Kontak</a>
+            <a href="checkout.html"
+                class="bg-green-500 text-white block text-center rounded-lg py-2 mt-2 hover:bg-green-600 transition">Keranjang (Lihat)</a>
+            <a href="login.html"
+                class="bg-red-500 text-white block text-center rounded-lg py-2 mt-2 hover:bg-red-600 transition">Keluar</a>
+        </div>
+    </nav>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Filter/Kategori -->
+            <div class="flex justify-center mb-10 flex-wrap gap-3">
+                <button class="bg-coffee-accent text-coffee-dark font-bold py-2 px-5 rounded-full shadow-lg hover:shadow-xl transition">Semua</button>
+                <button class="bg-white text-coffee-dark font-semibold py-2 px-5 rounded-full shadow-md hover:bg-gray-100 transition">Kopi ☕</button>
+                <button class="bg-white text-coffee-dark font-semibold py-2 px-5 rounded-full shadow-md hover:bg-gray-100 transition">Non-Kopi 🥛</button>
+                <button class="bg-white text-coffee-dark font-semibold py-2 px-5 rounded-full shadow-md hover:bg-gray-100 transition">Snack 🥨</button>
+            </div>
+
+            <h2 class="text-4xl font-extrabold text-center text-coffee-dark mb-10 border-b-4 border-coffee-accent/50 pb-2 max-w-lg mx-auto">Daftar Menu Kami 🍽️</h2>
+
+            <!-- Produk Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+                <!-- Kopi Susu 51 -->
+                <div
+                    class="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:translate-y-[-4px] transition duration-300 border border-coffee-light/20">
+                    <img src="img/kopi2.jpeg" alt="Kopi Susu 51"
+                        class="w-full h-48 object-cover"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x300/4b3832/ff9f1c?text=Kopi+Susu+51';">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-coffee-dark">Kopi Susu 51</h3>
+                            <span class="bg-coffee-bg text-coffee-dark py-1 px-3 rounded-full text-xs font-semibold border border-coffee-light">Kopi</span>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-4">Kopi susu signature dengan gula aren khas Warkop51. Pilihan sempurna untuk hari Anda.</p>
+                        <div class="flex justify-between items-center pt-2 border-t border-gray-100">
+                            <span class="text-2xl font-extrabold text-coffee-accent">Rp 18.000</span>
+                            <a href="checkout.html"
+                                class="bg-coffee-dark text-white py-2 px-5 rounded-full hover:bg-coffee-dark/90 transition font-semibold shadow-md">Tambah</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kopi Hitam -->
+                <div
+                    class="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:translate-y-[-4px] transition duration-300 border border-coffee-light/20">
+                    <img src="img/kopi.jpeg" alt="Kopi 51"
+                        class="w-full h-48 object-cover"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x300/4b3832/ff9f1c?text=Kopi+Hitam';">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-coffee-dark">Kopi Hitam 51</h3>
+                            <span class="bg-coffee-bg text-coffee-dark py-1 px-3 rounded-full text-xs font-semibold border border-coffee-light">Kopi</span>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-4">Kopi murni robusta pilihan, diseduh tanpa gula. Pahit yang nikmat.</p>
+                        <div class="flex justify-between items-center pt-2 border-t border-gray-100">
+                            <span class="text-2xl font-extrabold text-coffee-accent">Rp 15.000</span>
+                            <a href="checkout.html"
+                                class="bg-coffee-dark text-white py-2 px-5 rounded-full hover:bg-coffee-dark/90 transition font-semibold shadow-md">Tambah</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Es Kopi -->
+                <div
+                    class="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:translate-y-[-4px] transition duration-300 border border-coffee-light/20">
+                    <img src="img/eskopi.jpeg" alt="Es Kopi Susu"
+                        class="w-full h-48 object-cover"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x300/4b3832/ff9f1c?text=Es+Kopi';">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-coffee-dark">Es Kopi Susu Dingin</h3>
+                            <span class="bg-coffee-bg text-coffee-dark py-1 px-3 rounded-full text-xs font-semibold border border-coffee-light">Kopi</span>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-4">Kopi susu dingin yang menyegarkan, cocok untuk cuaca panas.</p>
+                        <div class="flex justify-between items-center pt-2 border-t border-gray-100">
+                            <span class="text-2xl font-extrabold text-coffee-accent">Rp 18.000</span>
+                            <a href="checkout.html"
+                                class="bg-coffee-dark text-white py-2 px-5 rounded-full hover:bg-coffee-dark/90 transition font-semibold shadow-md">Tambah</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Roti Bakar -->
+                <div
+                    class="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:translate-y-[-4px] transition duration-300 border border-coffee-light/20">
+                    <img src="img/roti.jpeg" alt="Roti Bakar"
+                        class="w-full h-48 object-cover"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x300/4b3832/ff9f1c?text=Roti+Bakar';">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-coffee-dark">Roti Bakar Klasik</h3>
+                            <span class="bg-coffee-bg text-coffee-dark py-1 px-3 rounded-full text-xs font-semibold border border-coffee-light">Snack</span>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-4">Roti tawar tebal, dibakar renyah dengan isian cokelat/keju klasik.</p>
+                        <div class="flex justify-between items-center pt-2 border-t border-gray-100">
+                            <span class="text-2xl font-extrabold text-coffee-accent">Rp 12.000</span>
+                            <a href="checkout.html"
+                                class="bg-coffee-dark text-white py-2 px-5 rounded-full hover:bg-coffee-dark/90 transition font-semibold shadow-md">Tambah</a>
+                        </div>
+                    </div>
+                </div>
+
+             
+            <!-- Tombol Checkout -->
+            <div class="text-center mt-16">
+                <a href="checkout.html">
+                    <button
+                        class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-10 rounded-full shadow-xl transition duration-300 text-lg transform hover:scale-[1.03]">
+                        Lanjut ke Pembayaran (Total: Rp 0)
+                    </button>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-coffee-dark text-coffee-light text-center p-6 mt-12 shadow-inner">
+        <p>© 2025 Warkop51. Dibuat dengan cinta dan secangkir kopi hangat.</p>
+    </footer>
+</body>
+</html>

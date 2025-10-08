@@ -1,0 +1,71 @@
+ /* --- CUSTOM COLORS (Sama seperti Angular) --- */
+        :root {
+            --coffee-dark: #3e2723; /* Brown 900 */
+            --coffee-accent: #ffb300; /* Amber 600 */
+            --coffee-light: #d7ccc8; /* Brown 200 */
+            --coffee-bg: #f5f5f5; /* Light Gray */
+        }
+        
+        .bg-coffee-dark { background-color: var(--coffee-dark); }
+        .text-coffee-dark { color: var(--coffee-dark); }
+        .text-coffee-accent { color: var(--coffee-accent); }
+        .text-coffee-light { color: var(--coffee-light); }
+        .bg-coffee-bg { background-color: var(--coffee-bg); }
+        .border-coffee-accent { border-color: var(--coffee-accent); }
+        .text-gray-600 { color: #4b5563; } /* Default Tailwind Gray */
+
+        /* --- HERO SECTION STYLES --- */
+        .about-hero {
+            background-image: url('https://placehold.co/1920x400/4b3832/f5f5f5?text=Warkop51+Coffee+Shop');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.5); /* Overlay */
+            border-radius: 0.75rem;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* --- CSS-ONLY MOBILE MENU LOGIC --- */
+        /* Sembunyikan Checkbox yang akan mengontrol menu */
+        #menu-toggle-checkbox {
+            display: none;
+        }
+
+        /* Sembunyikan menu seluler secara default dan saat layar lebih besar dari 'sm' */
+        #mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+        }
+
+        /* Tampilkan menu seluler jika checkbox dicentang */
+        #menu-toggle-checkbox:checked ~ #mobile-menu {
+            max-height: 500px; /* Nilai cukup besar untuk menampung konten */
+            padding-top: 0.75rem; /* pt-3 */
+            padding-bottom: 0.75rem; /* pb-3 */
+        }
+
+        /* Ikon hamburger/close */
+        #open-icon, #close-icon {
+            display: block;
+        }
+        #menu-toggle-checkbox:checked + label #open-icon {
+            display: none; /* Sembunyikan ikon hamburger saat dicentang */
+        }
+        #menu-toggle-checkbox:checked + label #close-icon {
+            display: block; /* Tampilkan ikon close saat dicentang */
+        }
+        #close-icon {
+            display: none; /* Sembunyikan ikon close secara default */
+        }
